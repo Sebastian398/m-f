@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comunidad M&amp;F</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "mf-principal": "#710373",
+            "mf-secundario": "#8a148c",
+            "mf-terciario": "#723873",
+            "mf-claro": "#f2d8f2",
+            "mf-blanco": "#f2f2f2",
+            "mf-negro": "#222222",
+          },
+          fontFamily: {
+            sans: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    section[id] {
+      scroll-margin-top: 5rem;
+      padding-top: 1rem;
+    }
+
+    nav a {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+      font-size: 0.875rem;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex-grow: 1;
+    }
+
+    footer {
+      width: 100%;
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body class="bg-mf-secundario text-mf-negro font-sans">
+
+  <!-- HEADER -->
+  <header class="bg-mf-blanco shadow-md sticky top-0 z-50">
+    <div class="container mx-auto max-w-7xl flex flex-wrap items-center justify-between py-4 px-6">
+      <a href="#inicio" aria-label="Ir al inicio" class="mb-2 md:mb-0">
+        <img src="css/svg/LOGOS COMUNIDAD M&amp;F-02.svg" alt="Comunidad M&amp;F Logo" id="logo" class="h-12 w-auto" />
+      </a>
+
+      <!-- Botón hamburguesa para móvil -->
+      <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false"
+        class="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-mf-secundario hover:text-mf-principal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-mf-principal">
+        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Navbar -->
+      <nav id="menu" aria-label="Menú principal"
+        class="hidden sm:flex flex-wrap gap-3 items-center w-full sm:w-auto mt-4 sm:mt-0">
+        <a href="#inicio"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Inicio
+        </a>
+        <a href="#mision-vision-valores"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Misión y Visión
+        </a>
+        <a href="#direcciones"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Direcciones
+        </a>
+        <a href="#estructura"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Estructura
+        </a>
+        <a href="#convocatorias"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Convocatorias
+        </a>
+        <a href="#donaciones"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Donaciones
+        </a>
+        <a href="#eventos"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Eventos
+        </a>
+        <a href="#noticias"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Noticias
+        </a>
+        <a href="#contacto"
+          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+          Contacto
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto max-w-7xl px-6 py-8" id="inicio">
+    <!-- Principal -->
+    <section class="principal text-center mb-12 text-mf-blanco">
+      <h1 class="text-4xl font-bold mb-2">Comunidad M&amp;F</h1>
+      <h2 class="text-2xl font-semibold mb-6">Bienvenido a la Comunidad M&amp;F</h2>
+      <a href="#convocatorias"
+        class="inline-block hover:bg-mf-principal hover:text-mf-blanco px-8 py-3 rounded-lg shadow bg-mf-blanco text-mf-principal transition font-semibold">
+        Únete a nosotros
+      </a>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="quienes-somos" class="mb-12 max-w-5xl mx-auto">
+      <article class="bg-mf-principal rounded-lg p-8 shadow-lg text-mf-blanco">
+        <h2 class="text-3xl font-bold mb-6 text-center">Quiénes Somos</h2>
+        <p class="text-center max-w-3xl mx-auto leading-relaxed text-mf-claro">
+          Somos una organización comprometida con la cultura, el arte y la inclusión. Nuestra misión es fomentar espacios
+          de encuentro para jóvenes y comunidades afines, impulsando proyectos que generan impacto positivo.
+        </p>
+      </article>
+    </section>
+
+    <!-- Misión, Visión y Valores -->
+    <section id="mision-vision-valores" class="mb-12 max-w-5xl mx-auto text-mf-blanco px-4 sm:px-0">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <article class="bg-mf-principal p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-3">Misión</h3>
+          <p>Impulsar iniciativas culturales y sociales para el desarrollo integral de nuestra comunidad.</p>
+        </article>
+        <article class="bg-mf-principal p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-3">Visión</h3>
+          <p>Ser un referente nacional en la promoción y fomento de la cultura pop inclusiva.</p>
+        </article>
+        <article class="bg-mf-principal p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-3">Valores</h3>
+          <ul class="list-disc list-inside text-left">
+            <li>Inclusión</li>
+            <li>Creatividad</li>
+            <li>Compromiso social</li>
+            <li>Transparencia</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Direcciones Principales -->
+    <section id="direcciones" class="mb-12 max-w-5xl mx-auto text-mf-blanco">
+      <h2 class="text-3xl font-bold mb-6 text-center">Direcciones Principales</h2>
+      <div class="space-y-8">
+        <article class="bg-mf-principal p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-3 border-b border-mf-claro pb-2">Dirección de Eventos</h3>
+          <p class="mb-3">
+            Coordinación de eventos como 2SIDES, Festival Virtual M&amp;F, A-Camp Fest, K-Party, K-Pop Random y participación
+            en ferias.
+          </p>
+          <ul class="list-disc list-inside">
+            <li>2SIDES</li>
+            <li>Festival Virtual M&amp;F</li>
+            <li>A-Camp Fest</li>
+            <li>K-Party</li>
+            <li>K-Pop Random</li>
+            <li>Participación en ferias</li>
+          </ul>
+        </article>
+
+        <article class="bg-mf-principal p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-3 border-b border-mf-claro pb-2">Dirección de Contenido</h3>
+          <p class="mb-3">
+            Proyectos de medios, podcast, creación audiovisual y todos los procesos relacionados con producción de contenido.
+          </p>
+          <ul class="list-disc list-inside">
+            <li>Proyectos de medios</li>
+            <li>Podcast</li>
+            <li>Creación audiovisual</li>
+            <li>Producción de contenido</li>
+          </ul>
+        </article>
+
+        <article class="bg-mf-principal p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-semibold mb-3 border-b border-mf-claro pb-2">Dirección de Impacto</h3>
+          <p class="mb-3">
+            M&amp;F Play Project, M&amp;F Live, Social M&amp;F, M&amp;F Shop, M&amp;F Travel y otras iniciativas culturales y sociales.
+          </p>
+          <ul class="list-disc list-inside">
+            <li>M&amp;F Play Project</li>
+            <li>M&amp;F Live</li>
+            <li>Social M&amp;F</li>
+            <li>M&amp;F Shop</li>
+            <li>M&amp;F Travel</li>
+            <li>Otras iniciativas culturales y sociales</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Estructura Organizacional -->
+    <section id="estructura" class="mb-12 max-w-3xl mx-auto text-mf-blanco">
+      <h2 class="text-3xl font-bold mb-6 text-center">Estructura Organizacional</h2>
+      <ul class="bg-mf-principal p-6 rounded-lg shadow list-disc list-inside space-y-3">
+        <li><strong>Director General:</strong> Nombre Apellido</li>
+        <li><strong>Dirección de Eventos:</strong> Nombre Apellido</li>
+        <li><strong>Dirección de Contenido:</strong> Nombre Apellido</li>
+        <li><strong>Dirección de Impacto:</strong> Nombre Apellido</li>
+        <li><strong>Coordinadores:</strong> Nombre Apellido(s)</li>
+        <li><strong>Gerentes:</strong> Nombre Apellido(s)</li>
+      </ul>
+    </section>
+
+    <!-- Convocatorias y Voluntariados -->
+    <section id="convocatorias" class="mb-12 max-w-4xl mx-auto text-center">
+      <article class="bg-mf-principal p-8 rounded-lg shadow text-mf-blanco">
+        <h2 class="text-3xl font-bold mb-6">Convocatorias y Voluntariados</h2>
+        <p class="mb-6 leading-relaxed px-4">
+          Únete a nuestros proyectos a través de voluntariados, servicio social y staff en la organización. Te invitamos a participar activamente.
+        </p>
+        <a href="https://forms.gle/tu_formulario_de_voluntariado" target="_blank" rel="noopener noreferrer"
+          class="inline-block bg-mf-claro text-mf-principal font-semibold rounded-lg px-8 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+          Inscripción Voluntariado &amp; Convocatorias
+        </a>
+      </article>
+    </section>
+
+    <!-- Donaciones -->
+    <section id="donaciones" class="mb-12 max-w-md mx-auto text-center bg-mf-principal p-8 rounded-lg shadow text-mf-blanco">
+      <h2 class="text-3xl font-bold mb-4">Apóyanos con tu donación</h2>
+      <p class="mb-6 px-4 leading-relaxed">
+        Somos una organización sin ánimo de lucro en proceso de formalización legal. Tu apoyo es vital para continuar
+        con proyectos culturales y sociales.
+      </p>
+      <a href="https://nequi.com.co/tu_usuario_o_codigo" target="_blank" rel="noopener noreferrer"
+        class="inline-block bg-mf-claro px-8 py-3 rounded-lg font-semibold shadow hover:bg-mf-secundario hover:text-mf-blanco transition text-mf-principal">
+        Donar Ahora
+      </a>
+
+      <p class="text-sm italic mt-4 px-4">\*Próximamente más opciones disponibles para donaciones.</p>
+    </section>
+
+    <!-- Eventos, Concursos y Actividades -->
+    <section id="eventos" class="mb-12 max-w-6xl mx-auto text-mf-blanco">
+      <h2 class="text-3xl font-bold mb-8 text-center">Eventos, Concursos y Actividades</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="bg-mf-principal rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
+          <h3 class="text-2xl font-semibold mb-3">Registro 2SIDES 2025</h3>
+          <p class="mb-4">Inscríbete en nuestro festival anual de cultura y música.</p>
+          <a href="https://forms.gle/registro-2sides2025" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+            Inscripción
+          </a>
+        </article>
+
+        <article class="bg-mf-principal rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
+          <h3 class="text-2xl font-semibold mb-3">Concurso Podcast M&amp;F</h3>
+          <p class="mb-4">Participa con tu creatividad en nuestro concurso anual de podcasts.</p>
+          <a href="https://forms.gle/concurso-podcast-mf" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+            Participar
+          </a>
+        </article>
+
+        <article class="bg-mf-principal rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
+          <h3 class="text-2xl font-semibold mb-3">Staff M&amp;F Live</h3>
+          <p class="mb-4">Sé parte del equipo organizador de nuestras transmisiones en vivo.</p>
+          <a href="https://forms.gle/staff-mflive" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+            Aplicar
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Eventos Destacados -->
+    <section id="eventos-destacados" class="mb-12 max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center text-mf-blanco">Eventos Destacados</h2>
+      <article class="mb-8 bg-mf-principal p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold mb-4 text-mf-blanco text-center">2SIDES 2024</h2>
+        <div class="galeria grid grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="css/img/2sides2024/2sides.webp" alt="Evento 1"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2024/1.webp" alt="Evento 2"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2024/2.webp" alt="Evento 3"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2024/3.webp" alt="Evento 4"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2024/4.webp" alt="Evento 5"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2024/5.webp" alt="Evento 6"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+        </div>
+      </article>
+      <article class="mb-8 bg-mf-principal p-6 rounded-lg shadow">
+        <h2 class="text-xl font-bold mb-4 text-mf-blanco text-center">2SIDES 2023</h2>
+        <div class="galeria grid grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="css/img/2sides2023/1.webp" alt="Evento 1"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2023/2.webp" alt="Evento 2"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2023/3.webp" alt="Evento 3"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2023/4.webp" alt="Evento 4"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2023/5.webp" alt="Evento 5"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+          <img src="css/img/2sides2023/6.webp" alt="Evento 6"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+        </div>
+      </article>
+    </section>
+
+    <!-- Noticias Recientes -->
+    <section id="noticias" class="mb-12 max-w-6xl mx-auto text-mf-blanco">
+      <h2 class="text-3xl font-bold mb-6 text-center">Noticias Recientes</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-mf-blanco p-6 rounded-lg shadow">
+          <img src="css/img/noticias/1.webp" alt="Noticia 1"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+        </article>
+        <article class="bg-mf-blanco p-6 rounded-lg shadow">
+          <img src="css/img/noticias/2.webp" alt="Noticia 2"
+            class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contacto -->
+  <section id="contacto" class="max-w-md mx-auto mb-12">
+    <article class="bg-mf-principal rounded-lg p-8 shadow-lg text-mf-blanco text-center">
+      <h2 class="text-3xl font-bold mb-6">Contacto</h2>
+      <p class="mb-4 text-lg">¿Tienes dudas o quieres colaborar con Comunidad M&amp;F? Escríbenos.</p>
+      <p class="mb-6">
+        Correo: <a href="mailto:comunidad.mxf@gmail.com"
+          class="underline hover:text-mf-claro transition text-mf-claro">comunidad.mxf@gmail.com</a>
+      </p>
+      <nav aria-label="Redes sociales Comunidad M&amp;F">
+        <ul class="flex justify-center gap-4 flex-wrap">
+          <li>
+            <a href="https://www.instagram.com/comunidad.mxf/" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram Comunidad M&amp;F"
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/comunidad.mxf/?locale=es_LA" target="_blank" rel="noopener noreferrer"
+              aria-label="Facebook Comunidad M&amp;F"
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/3193831573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Comunidad M&amp;F"
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@comunidad.mxf" target="_blank" rel="noopener noreferrer" aria-label="TikTok Comunidad M&amp;F"
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              TikTok
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-mf-blanco text-mf-secundario py-6 text-center shadow-inner mt-auto">
+    <div class="container mx-auto max-w-md text-xs">
+      © 2025 Comunidad M&amp;F. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const menuLinks = menu.querySelectorAll('a');
+
+    menuBtn.addEventListener('click', () => {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('hidden');
+    });
+
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 640) { 
+          menu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', false);
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
