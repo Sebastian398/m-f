@@ -130,6 +130,80 @@
       </a>
     </section>
 
+  <!-- Carrusel -->
+  <div class="relative max-w-xl mx-auto">
+    <div id="carousel" class="overflow-hidden rounded-lg shadow-lg">
+      <img id="carousel-image" src="css/img/2sides2024/2sides.webp" alt="Imagen Carousel" class="w-full h-64 object-cover" />
+    </div>
+
+    <!-- Controles -->
+    <button id="prevBtn" aria-label="Imagen anterior"
+      class="absolute top-1/2 left-3 -translate-y-1/2 bg-mf-principal bg-opacity-70 text-mf-blanco p-2 rounded-full hover:bg-mf-secundario transition">
+      &#10094;
+    </button>
+    <button id="nextBtn" aria-label="Siguiente imagen"
+      class="absolute top-1/2 right-3 -translate-y-1/2 bg-mf-principal bg-opacity-70 text-mf-blanco p-2 rounded-full hover:bg-mf-secundario transition">
+      &#10095;
+    </button>
+  </div>
+
+  <script>
+    const images = [
+      "css/img/2sides2024/2sides.webp",
+      "css/img/2sides2024/1.webp",
+      "css/img/2sides2024/2.webp",
+      "css/img/2sides2024/3.webp",
+      "css/img/2sides2024/4.webp",
+      "css/img/2sides2024/5.webp"
+    ];
+
+    let currentIndex = 0;
+    const carouselImage = document.getElementById('carousel-image');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function showImage(index) {
+      if (index < 0) {
+        currentIndex = images.length - 1;
+      } else if (index >= images.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = index;
+      }
+      carouselImage.src = images[currentIndex];
+    }
+
+    prevBtn.addEventListener('click', () => {
+      showImage(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      showImage(currentIndex + 1);
+    });
+    let autoSlideInterval = setInterval(() => {
+      showImage(currentIndex + 1);
+    }, 5000);
+
+    prevBtn.addEventListener('click', () => {
+      showImage(currentIndex - 1);
+      resetAutoSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      showImage(currentIndex + 1);
+      resetAutoSlide();
+    });
+
+    // Reiniciar intervalo automático cuando el usuario interactúa
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => {
+        showImage(currentIndex + 1);
+      }, 5000);
+    }
+  </script>
+</section>
+
     <!-- Quiénes Somos -->
     <section id="quienes-somos" class="mb-12 max-w-5xl mx-auto">
       <article class="bg-mf-principal rounded-lg p-8 shadow-lg text-mf-blanco">
