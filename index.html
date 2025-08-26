@@ -10,15 +10,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
             "mf-principal": "#710373",
-            "mf-secundario": "#8a148c",
+            "mf-secundario": "#7E217D",
             "mf-terciario": "#723873",
             "mf-claro": "#f2d8f2",
-            "mf-blanco": "#f2f2f2",
-            "mf-negro": "#222222",
+            "mf-blanco": "#FFFFFF",
+            "mf-negro": "#3E2781",
+            "mf-negro1": "#263687",
           },
           fontFamily: {
             sans: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
@@ -55,68 +57,138 @@
       width: 100%;
       background-color: #f2f2f2;
     }
+
+    body,
+    p,
+    a,
+    li,
+    span {
+      font-family: 'MV Boli', Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Koho', sans-serif;
+    }
   </style>
 </head>
 
-<body class="bg-mf-secundario text-mf-negro font-sans">
+<body
+  class="bg-mf-secundario text-mf-negro dark:bg-mf-negro dark:text-mf-blanco font-sans transition-colors duration-500"
+  id="body">
 
   <!-- HEADER -->
-  <header class="bg-mf-blanco shadow-md sticky top-0 z-50">
-    <div class="container mx-auto max-w-7xl flex flex-wrap items-center justify-between py-4 px-6">
-      <a href="#inicio" aria-label="Ir al inicio" class="mb-2 md:mb-0">
-        <img src="css/svg/LOGOS COMUNIDAD M&amp;F-02.svg" alt="Comunidad M&amp;F Logo" id="logo" class="h-12 w-auto" />
+  <header
+    class="bg-mf-blanco dark:bg-mf-negro1 shadow-md sticky top-0 z-50 transition-colors duration-500">
+    <div
+      class="container mx-auto max-w-7xl flex items-center justify-between py-4 px-6 gap-4">
+
+      <!-- Logo a la izquierda -->
+      <a href="#inicio" aria-label="Ir al inicio" class="flex-shrink-0">
+        <img id="logo" src="css/svg/logo2.svg" alt="Comunidad M&amp;F Logo"
+          class="h-16 w-auto object-contain" />
       </a>
 
-      <!-- Botón hamburguesa para móvil -->
+      <!-- Botón hamburguesa para sm y md -->
       <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false"
-        class="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-mf-secundario hover:text-mf-principal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-mf-principal">
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-mf-secundario hover:text-mf-principal focus:outline-none focus:ring-2 focus:ring-inset focus:ring-mf-principal dark:focus:ring-mf-blanco dark:text-mf-blanco transition">
         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
 
-      <!-- Navbar -->
-      <nav id="menu" aria-label="Menú principal"
-        class="hidden sm:flex flex-wrap gap-3 items-center w-full sm:w-auto mt-4 sm:mt-0">
-        <a href="#inicio"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+      <!-- Contenedor del menú y botón modo oscuro -->
+      <div
+        class="flex flex-grow md:flex-grow-0 md:items-center md:gap-6 md:flex-nowrap items-center justify-end w-full md:w-auto">
+
+        <!-- Menú -->
+        <nav id="menu" aria-label="Menú principal"
+          class="hidden md:flex flex-wrap gap-3 items-center justify-end w-full md:w-auto text-sm font-semibold">
+
+          <a href="#inicio"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Inicio
+          </a>
+          <a href="#mision-vision-valores"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Misión y Visión
+          </a>
+          <a href="#direcciones"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Direcciones
+          </a>
+          <a href="#estructura"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Estructura
+          </a>
+          <a href="#convocatorias"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Convocatorias
+          </a>
+          <a href="#donaciones"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Donaciones
+          </a>
+          <a href="#eventos"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Eventos
+          </a>
+          <a href="#noticias"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Noticias
+          </a>
+          <a href="#contacto"
+            class="block bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition px-4 py-2 text-center">
+            Contacto
+          </a>
+        </nav>
+
+        <!-- Botón modo oscuro -->
+        <button id="darkModeToggle" aria-label="Alternar modo oscuro"
+          class="ml-4 bg-mf-principal text-mf-blanco px-3 py-1 rounded hover:bg-mf-terciario dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition font-semibold whitespace-nowrap flex items-center justify-center">
+          🌙
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú móvil y tablet -->
+    <nav id="menu-mobile" aria-label="Menú móvil principal"
+      class="md:hidden bg-mf-blanco dark:bg-mf-negro1 shadow-md mt-1 rounded-b-lg hidden">
+      <div class="flex flex-col px-6 py-4 gap-3">
+        <a href="#inicio" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Inicio
         </a>
-        <a href="#mision-vision-valores"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#mision-vision-valores" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Misión y Visión
         </a>
-        <a href="#direcciones"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#direcciones" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Direcciones
         </a>
-        <a href="#estructura"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#estructura" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Estructura
         </a>
-        <a href="#convocatorias"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#convocatorias" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Convocatorias
         </a>
-        <a href="#donaciones"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#donaciones" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Donaciones
         </a>
-        <a href="#eventos"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#eventos" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Eventos
         </a>
-        <a href="#noticias"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#noticias" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Noticias
         </a>
-        <a href="#contacto"
-          class="block w-full sm:w-auto bg-mf-claro text-mf-secundario rounded-lg shadow hover:bg-mf-secundario hover:text-mf-blanco transition font-semibold px-4 py-2 text-center sm:text-auto">
+        <a href="#contacto" class="block text-mf-secundario dark:text-mf-blanco font-semibold px-4 py-2 rounded hover:bg-mf-claro dark:hover:bg-mf-negro dark:hover:text-mf-claro transition">
           Contacto
         </a>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
   <main class="container mx-auto max-w-7xl px-6 py-8" id="inicio">
@@ -125,7 +197,7 @@
       <h1 class="text-4xl font-bold mb-2">Comunidad M&amp;F</h1>
       <h2 class="text-2xl font-semibold mb-6">Bienvenido a la Comunidad M&amp;F</h2>
       <a href="#convocatorias"
-        class="inline-block hover:bg-mf-principal hover:text-mf-blanco px-8 py-3 rounded-lg shadow bg-mf-blanco text-mf-principal transition font-semibold">
+        class="inline-block hover:bg-mf-principal hover:text-mf-blanco px-8 py-3 rounded-lg shadow bg-mf-blanco text-mf-principal dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro1 dark:hover:text-mf-blanco transition font-semibold">
         Únete a nosotros
       </a>
     </section>
@@ -138,11 +210,11 @@
 
     <!-- Controles -->
     <button id="prevBtn" aria-label="Imagen anterior"
-      class="absolute top-1/2 left-3 -translate-y-1/2 bg-mf-principal bg-opacity-70 text-mf-blanco p-2 rounded-full hover:bg-mf-secundario transition">
+      class="absolute top-1/2 left-3 -translate-y-1/2 bg-mf-principal bg-opacity-70 text-mf-blanco p-2 rounded-full hover:bg-mf-secundario dark:bg-mf-negro dark:hover:bg-mf-negro1 transition">
       &#10094;
     </button>
     <button id="nextBtn" aria-label="Siguiente imagen"
-      class="absolute top-1/2 right-3 -translate-y-1/2 bg-mf-principal bg-opacity-70 text-mf-blanco p-2 rounded-full hover:bg-mf-secundario transition">
+      class="absolute top-1/2 right-3 -translate-y-1/2 bg-mf-principal bg-opacity-70 text-mf-blanco p-2 rounded-full hover:bg-mf-secundario dark:bg-mf-negro dark:hover:bg-mf-negro1 transition">
       &#10095;
     </button>
   </div>
@@ -194,7 +266,6 @@
       resetAutoSlide();
     });
 
-    // Reiniciar intervalo automático cuando el usuario interactúa
     function resetAutoSlide() {
       clearInterval(autoSlideInterval);
       autoSlideInterval = setInterval(() => {
@@ -206,7 +277,7 @@
 
     <!-- Quiénes Somos -->
     <section id="quienes-somos" class="mb-12 max-w-5xl mx-auto">
-      <article class="bg-mf-principal rounded-lg p-8 shadow-lg text-mf-blanco">
+      <article class="bg-mf-principal dark:bg-mf-negro1 rounded-lg p-8 shadow-lg text-mf-blanco">
         <h2 class="text-3xl font-bold mb-6 text-center">Quiénes Somos</h2>
         <p class="text-center max-w-3xl mx-auto leading-relaxed text-mf-claro">
           Somos una organización comprometida con la cultura, el arte y la inclusión. Nuestra misión es fomentar espacios
@@ -218,15 +289,15 @@
     <!-- Misión, Visión y Valores -->
     <section id="mision-vision-valores" class="mb-12 max-w-5xl mx-auto text-mf-blanco px-4 sm:px-0">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-        <article class="bg-mf-principal p-6 rounded-lg shadow">
+        <article class="bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <h3 class="text-xl font-semibold mb-3">Misión</h3>
           <p>Impulsar iniciativas culturales y sociales para el desarrollo integral de nuestra comunidad.</p>
         </article>
-        <article class="bg-mf-principal p-6 rounded-lg shadow">
+        <article class="bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <h3 class="text-xl font-semibold mb-3">Visión</h3>
           <p>Ser un referente nacional en la promoción y fomento de la cultura pop inclusiva.</p>
         </article>
-        <article class="bg-mf-principal p-6 rounded-lg shadow">
+        <article class="bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <h3 class="text-xl font-semibold mb-3">Valores</h3>
           <ul class="list-disc list-inside text-left">
             <li>Inclusión</li>
@@ -242,7 +313,7 @@
     <section id="direcciones" class="mb-12 max-w-5xl mx-auto text-mf-blanco">
       <h2 class="text-3xl font-bold mb-6 text-center">Direcciones Principales</h2>
       <div class="space-y-8">
-        <article class="bg-mf-principal p-6 rounded-lg shadow">
+        <article class="bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <h3 class="text-2xl font-semibold mb-3 border-b border-mf-claro pb-2">Dirección de Eventos</h3>
           <p class="mb-3">
             Coordinación de eventos como 2SIDES, Festival Virtual M&amp;F, A-Camp Fest, K-Party, K-Pop Random y participación
@@ -258,7 +329,7 @@
           </ul>
         </article>
 
-        <article class="bg-mf-principal p-6 rounded-lg shadow">
+        <article class="bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <h3 class="text-2xl font-semibold mb-3 border-b border-mf-claro pb-2">Dirección de Contenido</h3>
           <p class="mb-3">
             Proyectos de medios, podcast, creación audiovisual y todos los procesos relacionados con producción de contenido.
@@ -271,7 +342,7 @@
           </ul>
         </article>
 
-        <article class="bg-mf-principal p-6 rounded-lg shadow">
+        <article class="bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <h3 class="text-2xl font-semibold mb-3 border-b border-mf-claro pb-2">Dirección de Impacto</h3>
           <p class="mb-3">
             M&amp;F Play Project, M&amp;F Live, Social M&amp;F, M&amp;F Shop, M&amp;F Travel y otras iniciativas culturales y sociales.
@@ -291,7 +362,7 @@
     <!-- Estructura Organizacional -->
     <section id="estructura" class="mb-12 max-w-3xl mx-auto text-mf-blanco">
       <h2 class="text-3xl font-bold mb-6 text-center">Estructura Organizacional</h2>
-      <ul class="bg-mf-principal p-6 rounded-lg shadow list-disc list-inside space-y-3">
+      <ul class="bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow list-disc list-inside space-y-3">
         <li><strong>Director General:</strong> Nombre Apellido</li>
         <li><strong>Dirección de Eventos:</strong> Nombre Apellido</li>
         <li><strong>Dirección de Contenido:</strong> Nombre Apellido</li>
@@ -303,27 +374,27 @@
 
     <!-- Convocatorias y Voluntariados -->
     <section id="convocatorias" class="mb-12 max-w-4xl mx-auto text-center">
-      <article class="bg-mf-principal p-8 rounded-lg shadow text-mf-blanco">
+      <article class="bg-mf-principal dark:bg-mf-negro1 p-8 rounded-lg shadow text-mf-blanco">
         <h2 class="text-3xl font-bold mb-6">Convocatorias y Voluntariados</h2>
         <p class="mb-6 leading-relaxed px-4">
           Únete a nuestros proyectos a través de voluntariados, servicio social y staff en la organización. Te invitamos a participar activamente.
         </p>
         <a href="https://forms.gle/tu_formulario_de_voluntariado" target="_blank" rel="noopener noreferrer"
-          class="inline-block bg-mf-claro text-mf-principal font-semibold rounded-lg px-8 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+          class="inline-block bg-mf-claro text-mf-principal font-semibold rounded-lg px-8 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition">
           Inscripción Voluntariado &amp; Convocatorias
         </a>
       </article>
     </section>
 
     <!-- Donaciones -->
-    <section id="donaciones" class="mb-12 max-w-md mx-auto text-center bg-mf-principal p-8 rounded-lg shadow text-mf-blanco">
+    <section id="donaciones" class="mb-12 max-w-md mx-auto text-center bg-mf-principal dark:bg-mf-negro1 p-8 rounded-lg shadow text-mf-blanco">
       <h2 class="text-3xl font-bold mb-4">Apóyanos con tu donación</h2>
       <p class="mb-6 px-4 leading-relaxed">
         Somos una organización sin ánimo de lucro en proceso de formalización legal. Tu apoyo es vital para continuar
         con proyectos culturales y sociales.
       </p>
       <a href="https://nequi.com.co/tu_usuario_o_codigo" target="_blank" rel="noopener noreferrer"
-        class="inline-block bg-mf-claro px-8 py-3 rounded-lg font-semibold shadow hover:bg-mf-secundario hover:text-mf-blanco transition text-mf-principal">
+        class="inline-block bg-mf-claro px-8 py-3 rounded-lg font-semibold shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition text-mf-principal">
         Donar Ahora
       </a>
 
@@ -334,29 +405,29 @@
     <section id="eventos" class="mb-12 max-w-6xl mx-auto text-mf-blanco">
       <h2 class="text-3xl font-bold mb-8 text-center">Eventos, Concursos y Actividades</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <article class="bg-mf-principal rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
+        <article class="bg-mf-principal dark:bg-mf-negro1 rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
           <h3 class="text-2xl font-semibold mb-3">Registro 2SIDES 2025</h3>
           <p class="mb-4">Inscríbete en nuestro festival anual de cultura y música.</p>
           <a href="https://forms.gle/registro-2sides2025" target="_blank" rel="noopener noreferrer"
-            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition">
             Inscripción
           </a>
         </article>
 
-        <article class="bg-mf-principal rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
+        <article class="bg-mf-principal dark:bg-mf-negro1 rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
           <h3 class="text-2xl font-semibold mb-3">Concurso Podcast M&amp;F</h3>
           <p class="mb-4">Participa con tu creatividad en nuestro concurso anual de podcasts.</p>
           <a href="https://forms.gle/concurso-podcast-mf" target="_blank" rel="noopener noreferrer"
-            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition">
             Participar
           </a>
         </article>
 
-        <article class="bg-mf-principal rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
+        <article class="bg-mf-principal dark:bg-mf-negro1 rounded-lg p-6 shadow hover:scale-105 transform transition duration-300 text-center">
           <h3 class="text-2xl font-semibold mb-3">Staff M&amp;F Live</h3>
           <p class="mb-4">Sé parte del equipo organizador de nuestras transmisiones en vivo.</p>
           <a href="https://forms.gle/staff-mflive" target="_blank" rel="noopener noreferrer"
-            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco transition">
+            class="inline-block bg-mf-claro text-mf-secundario font-semibold rounded-lg px-6 py-3 shadow hover:bg-mf-secundario hover:text-mf-blanco dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition">
             Aplicar
           </a>
         </article>
@@ -366,7 +437,7 @@
     <!-- Eventos Destacados -->
     <section id="eventos-destacados" class="mb-12 max-w-7xl mx-auto">
       <h2 class="text-3xl font-bold mb-6 text-center text-mf-blanco">Eventos Destacados</h2>
-      <article class="mb-8 bg-mf-principal p-6 rounded-lg shadow">
+      <article class="mb-8 bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
         <h2 class="text-xl font-bold mb-4 text-mf-blanco text-center">2SIDES 2024</h2>
         <div class="galeria grid grid-cols-2 md:grid-cols-3 gap-4">
           <img src="css/img/2sides2024/2sides.webp" alt="Evento 1"
@@ -383,7 +454,7 @@
             class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
         </div>
       </article>
-      <article class="mb-8 bg-mf-principal p-6 rounded-lg shadow">
+      <article class="mb-8 bg-mf-principal dark:bg-mf-negro1 p-6 rounded-lg shadow">
         <h2 class="text-xl font-bold mb-4 text-mf-blanco text-center">2SIDES 2023</h2>
         <div class="galeria grid grid-cols-2 md:grid-cols-3 gap-4">
           <img src="css/img/2sides2023/1.webp" alt="Evento 1"
@@ -406,11 +477,11 @@
     <section id="noticias" class="mb-12 max-w-6xl mx-auto text-mf-blanco">
       <h2 class="text-3xl font-bold mb-6 text-center">Noticias Recientes</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <article class="bg-mf-blanco p-6 rounded-lg shadow">
+        <article class="bg-mf-blanco dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <img src="css/img/noticias/1.webp" alt="Noticia 1"
             class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
         </article>
-        <article class="bg-mf-blanco p-6 rounded-lg shadow">
+        <article class="bg-mf-blanco dark:bg-mf-negro1 p-6 rounded-lg shadow">
           <img src="css/img/noticias/2.webp" alt="Noticia 2"
             class="rounded-lg shadow transform transition duration-300 hover:scale-105" />
         </article>
@@ -421,7 +492,7 @@
 
   <!-- Contacto -->
   <section id="contacto" class="max-w-md mx-auto mb-12">
-    <article class="bg-mf-principal rounded-lg p-8 shadow-lg text-mf-blanco text-center">
+    <article class="bg-mf-principal dark:bg-mf-negro1 rounded-lg p-8 shadow-lg text-mf-blanco text-center">
       <h2 class="text-3xl font-bold mb-6">Contacto</h2>
       <p class="mb-4 text-lg">¿Tienes dudas o quieres colaborar con Comunidad M&amp;F? Escríbenos.</p>
       <p class="mb-6">
@@ -433,26 +504,26 @@
           <li>
             <a href="https://www.instagram.com/comunidad.mxf/" target="_blank" rel="noopener noreferrer"
               aria-label="Instagram Comunidad M&amp;F"
-              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition inline-block min-w-[90px] text-center font-semibold">
               Instagram
             </a>
           </li>
           <li>
             <a href="https://www.facebook.com/comunidad.mxf/?locale=es_LA" target="_blank" rel="noopener noreferrer"
               aria-label="Facebook Comunidad M&amp;F"
-              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition inline-block min-w-[90px] text-center font-semibold">
               Facebook
             </a>
           </li>
           <li>
             <a href="https://wa.me/3193831573" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Comunidad M&amp;F"
-              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco transition inline-block min-w-[90px] text-center font-semibold">
               WhatsApp
             </a>
           </li>
           <li>
             <a href="https://www.tiktok.com/@comunidad.mxf" target="_blank" rel="noopener noreferrer" aria-label="TikTok Comunidad M&amp;F"
-              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
+              class="hover:bg-mf-secundario hover:text-mf-claro px-4 py-2 rounded-lg shadow bg-mf-claro dark:bg-mf-claro dark:text-mf-negro dark:hover:bg-mf-negro dark:hover:text-mf-blanco text-mf-principal transition inline-block min-w-[90px] text-center font-semibold">
               TikTok
             </a>
           </li>
@@ -462,32 +533,77 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="w-full bg-mf-blanco text-mf-secundario py-6 text-center shadow-inner mt-auto">
+  <footer class="w-full bg-mf-blanco dark:bg-mf-negro1 text-mf-secundario dark:text-mf-blanco py-6 text-center shadow-inner mt-auto transition-colors duration-500">
     <div class="container mx-auto max-w-md text-xs">
       © 2025 Comunidad M&amp;F. Todos los derechos reservados.
     </div>
   </footer>
 
   <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    const menuLinks = menu.querySelectorAll('a');
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  const menuLinks = menu.querySelectorAll('a');
 
-    menuBtn.addEventListener('click', () => {
-      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', !isExpanded);
-      menu.classList.toggle('hidden');
-    });
+  menuBtn.addEventListener('click', () => {
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', !isExpanded);
+    menu.classList.toggle('hidden');
+  });
 
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 640) { 
-          menu.classList.add('hidden');
-          menuBtn.setAttribute('aria-expanded', false);
-        }
-      });
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 640) { 
+        menu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', false);
+      }
     });
-  </script>
+  });
+
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const htmlEl = document.documentElement;
+  const logo = document.getElementById('logo');
+
+  function updateLogo() {
+    const isDark = htmlEl.classList.contains('dark');
+    const isLarge = window.innerWidth >= 640; 
+
+    let logoSrc = '';
+
+    if (isDark && isLarge) logoSrc = 'css/svg/logo3.svg';
+    else if (isDark && !isLarge) logoSrc = 'css/svg/logo4.svg';
+    else if (!isDark && isLarge) logoSrc = 'css/svg/logo1.svg';
+    else logoSrc = 'css/svg/logo2.svg';
+
+    if (!logo.src.endsWith(logoSrc)) {
+      logo.src = logoSrc;
+    }
+  }
+
+  // Actualiza el icono del botón segun el modo
+  function updateDarkModeIcon() {
+    const isDark = htmlEl.classList.contains('dark');
+    darkModeToggle.textContent = isDark ? '☀️' : '🌙'; // Sol para modo oscuro, luna para modo claro
+  }
+
+  // Inicializa el modo según localStorage y actualiza icono
+  if (localStorage.getItem('darkMode') === 'true') {
+    htmlEl.classList.add('dark');
+  }
+
+  updateLogo();
+  updateDarkModeIcon();
+
+  darkModeToggle.addEventListener('click', () => {
+    htmlEl.classList.toggle('dark');
+    const isDark = htmlEl.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark);
+    updateLogo();
+    updateDarkModeIcon();
+  });
+
+  window.addEventListener('resize', updateLogo);
+</script>
+
 
 </body>
 
